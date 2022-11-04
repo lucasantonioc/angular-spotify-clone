@@ -1,0 +1,32 @@
+@import 'variaveis';
+
+:host {
+  display: block;
+  width: 100%;
+
+  button {
+    width: 100%;
+    border: none;
+    padding: 10px 20px 10px 25px;
+    border-radius: 5px;
+    text-align: center;
+    background-color: $cor-fundo-card;
+    color: $cor-secundaria;
+    cursor: pointer;
+
+    span {
+      display: inline-flex;
+      vertical-align: bottom;
+      width: 150px;
+      white-space: nowrap;
+      margin-left: 10px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    &.selecionado {
+      color: $cor-primaria;
+    }
+
+  }
+}
