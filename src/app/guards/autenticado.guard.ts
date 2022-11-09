@@ -8,8 +8,9 @@ import { Observable } from 'rxjs';
 })
 export class AutenticadoGuard implements CanLoad {
 
-  constructor(private router: Router, private spotifyService: SpotifyService) {
-  }
+  constructor(
+    private router: Router,
+    private spotifyService: SpotifyService) { }
 
   canLoad(
     route: Route,
@@ -23,7 +24,6 @@ export class AutenticadoGuard implements CanLoad {
 
     return new Promise(async (res) => {
       const usuarioCriado = await this.spotifyService.inicializarUsuario();
-      console.log('usuarioCriado', usuarioCriado);
       if (!!usuarioCriado) {
         res(true);
       } else {

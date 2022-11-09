@@ -1,0 +1,23 @@
+@import 'variaveis.scss';
+
+.container {
+  align-items: center;
+  cursor: pointer;
+  padding: 5px 0px;
+
+  img {
+    width: 40px;
+    border-radius: 50%;
+    flex-grow: 0;
+  }
+
+  span {
+    flex-grow: 1;
+    margin-left: 10px;
+    font-size: .85rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+}

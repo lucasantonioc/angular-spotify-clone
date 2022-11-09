@@ -41,16 +41,9 @@
       >
         <fa-icon [icon]="playlistIcon"> </fa-icon>
       </app-botao-menu>
-
-      <app-botao-menu
-        *ngFor="let playlist of playlists"
-        [descricao]="playlist.nome"
-        [selecionado]="menuSelecionado == playlist.id"
-        (click)="menuOnClick(playlist.id)"
-      >
-        <fa-icon [icon]="playlistIcon"> </fa-icon>
-      </app-botao-menu>
     </div>
   </div>
 </div>
-<div class="usuario-info"></div>
+<div class="usuario-info">
+  <app-rodape-usuario></app-rodape-usuario>
+</div>
