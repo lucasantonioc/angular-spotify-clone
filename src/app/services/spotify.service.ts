@@ -1,5 +1,5 @@
 import { IMusica } from './../interfaces/IMusica';
-import { newArtista } from 'src/app/common/factories';
+import { newArtista, newPlaylist } from 'src/app/common/factories';
 import { IUsuario } from './../interfaces/IUsuario';
 import { SpotifyConfiguration } from './../../environments/environment';
 import { Injectable } from '@angular/core';
@@ -81,6 +81,20 @@ export class SpotifyService {
     return playlists.items.map(converteSpotifyPlaylistParaPlaylist);
   }
 
+  async buscarMusicasPlaylist(playlistId: string, offset = 0, limit = 50) {
+    const playlistSpotify = await this.spotifyApi.getPlaylist(playlistId);
+
+    if (!playlistSpotify) {
+      return newPlaylist();
+    }
+
+    const playlist = converteSpotifyPlaylistParaPlaylist(playlistSpotify);
+    const musicasSpotify = await this.spotifyApi.getPlaylistTracks(playlistId, { offset, limit });
+    playlist.musicas = musicasSpotify.items.map(x => converteSpotifyTrackParaMusica(x.track as SpotifyApi.TrackObjectFull));
+
+    return playlist;
+  }
+
   async buscarTopArtistas(limit = 10): Promise<IArtista[]> {
     const artistas = await this.spotifyApi.getMyTopArtists({ limit });
     if (artistas.items.length) {
@@ -126,6 +140,14 @@ export class SpotifyService {
 
   async proximaMusica() {
     await this.spotifyApi.skipToNext();
+  }
+
+  async pausarTocarMusica(pause: boolean) {
+    if (pause) {
+      await this.spotifyApi.pause();
+    } else {
+      await this.spotifyApi.play();
+    }
   }
 
   logout() {

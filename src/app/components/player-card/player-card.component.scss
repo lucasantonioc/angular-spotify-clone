@@ -1,10 +1,10 @@
 @import 'variaveis.scss';
 
 .container {
-  border-radius: 5px;
-  margin-top: 20px;
   width: 100%;
   height: 100%;
+  border-radius: 5px;
+  margin-top: 20px;
   max-width: 200px;
   overflow: hidden;
   background-color: $cor-fundo;
@@ -13,7 +13,7 @@
 
   .image {
     margin-top: 20px;
-    height: 50%;
+    height: 30%;
     max-height: 50%;
     background-position: top;
     background-size: cover;
@@ -22,12 +22,19 @@
 
   .controles {
     padding-top: 10px;
-    flex-grow: 1;
+    width: 100%;
+    // flex-grow: 1;
 
     span {
+      width: 100%;
+      flex-grow: 1;
       color: $cor-secundaria;
-      font-size: .9rem;
+      font-size: .8rem;
       font-weight: 700;
+      padding-right: 30px;
+      // white-space: nowrap;
+      // overflow: hidden;
+      // text-overflow: ellipsis;
     }
 
     .botoes {

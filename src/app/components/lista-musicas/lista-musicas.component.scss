@@ -1,0 +1,33 @@
+@import 'variaveis.scss';
+@import 'table.scss';
+
+:host {
+  display: flex;
+  justify-content: space-between;
+
+  .painel-direito {
+    height: 100vh;
+  }
+
+  .lista {
+    padding: 0px 50px;
+    padding-bottom: 20px;
+    max-height: 100%;
+    width: 100%;
+    overflow-y: scroll;
+  }
+
+  ::-webkit-scrollbar {
+    width: 7px;
+
+    &-thumb {
+      background-color: rgba($cor-secundaria, .2);
+      border-radius: 5px;
+    }
+
+    &-track {
+      background-color: transparent;
+    }
+  }
+
+}

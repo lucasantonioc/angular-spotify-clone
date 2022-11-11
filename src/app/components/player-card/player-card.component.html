@@ -1,17 +1,21 @@
 <div class="container p-10">
   <span class="titulo-md">Tocando agora</span>
   <div class="image" [style.background-image]="'url(' + musica.album.imagemUrl + ')'"></div>
-  <!-- <div class="controles">
+  <div class="controles">
     <span> {{ musica.titulo }} </span>
     <div class="botoes">
       <fa-icon
-        (click)="voltarMusica"
+        (click)="voltarMusica()"
         [icon]="anteriorIcon">
       </fa-icon>
       <fa-icon
-        (click)="proximaMusica"
+        (click)="pausarTocarMusica()"
+        [icon]="pause ? tocarIcon : pausarIcon">
+      </fa-icon>
+      <fa-icon
+        (click)="proximaMusica()"
         [icon]="proximoIcon">
       </fa-icon>
     </div>
-  </div> -->
+  </div>
 </div>

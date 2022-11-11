@@ -1,13 +1,8 @@
-<div class="minhas-musicas">
-  <span class="titulo-bg mt-4">
-    Seu Top Artista
-  </span>
-
-  <app-top-artista class="mt-2 d-block"></app-top-artista>
-
-  <span class="titulo-bg mt-4">
-    Músicas Curtidas
-  </span>
+<div class="lista mt-4">
+  <app-banner [imagemUrl]="bannerImagemUrl" [texto]="bannerTexto"> </app-banner>
+  <div class="titulo-bg mt-7">
+    {{ titulo }}
+  </div>
 
   <table class="table mt-3">
     <thead>
@@ -36,9 +31,7 @@
       </tr>
     </tbody>
   </table>
-
 </div>
-
 <app-painel-direito class="painel-direito">
 
 </app-painel-direito>

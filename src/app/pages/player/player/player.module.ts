@@ -1,3 +1,5 @@
+import { BannerComponent } from './../../../components/banner/banner.component';
+import { ListaMusicasComponent } from './../../../components/lista-musicas/lista-musicas.component';
 import { PlayerCardComponent } from './../../../components/player-card/player-card.component';
 import { ArtistaItemListComponent } from './../../../components/artista-item-list/artista-item-list.component';
 import { TopArtistasComponent } from './../../../components/top-artistas/top-artistas.component';
@@ -29,6 +31,8 @@ import { FormsModule } from '@angular/forms';
     TopArtistasComponent,
     ArtistaItemListComponent,
     PlayerCardComponent,
+    ListaMusicasComponent,
+    BannerComponent,
   ],
   imports: [
     CommonModule,
