@@ -2,6 +2,7 @@
 <app-artista-item-list
   *ngFor="let artista of artistas"
   [fotoArtistaSrc]="artista.imagemUrl"
+  (click)="irParaArtista(artista.id)"
 >
   {{ artista.nome }}
 </app-artista-item-list>

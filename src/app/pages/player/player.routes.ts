@@ -15,7 +15,7 @@ export const PlayerRotas: Routes = [
       {
         path: 'lista/:tipo/:id',
         component: ListaMusicasComponent
-      }
+      },
     ]
   },
 ];

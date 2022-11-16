@@ -72,7 +72,10 @@ export class ListaMusicasComponent implements OnInit, OnDestroy {
   }
 
   async obterDadosArtista(artistaId: string) {
-    //TODO
+    const musicasArtista = await this.spotifyService.buscarMusicasArtista(artistaId);
+    const artista = await this.spotifyService.obterDadosArtista(artistaId);
+    this.definirDadosPagina(artista.nome, artista.imagemUrl, musicasArtista);
+    this.titulo = 'Músicas Artista: ' + artista.nome;
   }
 
   async executarMusica(musica: IMusica) {

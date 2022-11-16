@@ -1,4 +1,3 @@
-import { SpotifyService } from 'src/app/services/spotify.service';
 import { Subscription } from 'rxjs';
 import { PlayerService } from './../../services/player.service';
 import { newMusica } from 'src/app/common/factories';
@@ -28,6 +27,7 @@ export class PlayerCardComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.obterMusicaAtual();
+    this.obterStatusMusicaAtual();
   }
 
   ngOnDestroy(): void {
@@ -37,6 +37,13 @@ export class PlayerCardComponent implements OnInit, OnDestroy {
   obterMusicaAtual() {
     const sub = this.playerService.musicaAtual.subscribe(musica => {
       this.musica = musica;
+    });
+    this.subs.push(sub);
+  }
+
+  obterStatusMusicaAtual() {
+    const sub = this.playerService.musicaAtualIsPlaying.subscribe(status => {
+      this.pause = !status;
     });
     this.subs.push(sub);
   }

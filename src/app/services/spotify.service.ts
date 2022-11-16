@@ -89,10 +89,25 @@ export class SpotifyService {
     }
 
     const playlist = converteSpotifyPlaylistParaPlaylist(playlistSpotify);
-    const musicasSpotify = await this.spotifyApi.getPlaylistTracks(playlistId, { offset, limit });
-    playlist.musicas = musicasSpotify.items.map(x => converteSpotifyTrackParaMusica(x.track as SpotifyApi.TrackObjectFull));
+    const musicasSpotify = await this.spotifyApi.getPlaylistTracks(playlistId, {
+      offset,
+      limit,
+    });
+    playlist.musicas = musicasSpotify.items.map((x) =>
+      converteSpotifyTrackParaMusica(x.track as SpotifyApi.TrackObjectFull)
+    );
 
     return playlist;
+  }
+
+  async obterDadosArtista(artistaId: string): Promise<IArtista> {
+    const artistaSpotify = await this.spotifyApi.getArtist(artistaId);
+    return converteSpotifyArtistasParaArtista(artistaSpotify);
+  }
+
+  async buscarMusicasArtista(artistaId: string): Promise<IMusica[]> {
+    const musicasArtista = (await this.spotifyApi.getArtistTopTracks(artistaId, 'BR')).tracks;
+    return musicasArtista.map(converteSpotifyTrackParaMusica);
   }
 
   async buscarTopArtistas(limit = 10): Promise<IArtista[]> {
@@ -132,6 +147,10 @@ export class SpotifyService {
   async obterMusicaAtual(): Promise<IMusica> {
     const musicaSpotify = await this.spotifyApi.getMyCurrentPlayingTrack();
     return converteSpotifyTrackParaMusica(musicaSpotify.item);
+  }
+
+  async obterStatusMusicaAtual(): Promise<boolean> {
+    return (await this.spotifyApi.getMyCurrentPlayingTrack()).is_playing;
   }
 
   async voltarMusica() {
