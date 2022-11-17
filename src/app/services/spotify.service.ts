@@ -100,13 +100,20 @@ export class SpotifyService {
     return playlist;
   }
 
+  async obterArtistas(): Promise<IArtista[]> {
+    const artistasSpotify = await this.spotifyApi.getMyTopArtists();
+    return artistasSpotify.items.map(converteSpotifyArtistasParaArtista);
+  }
+
   async obterDadosArtista(artistaId: string): Promise<IArtista> {
     const artistaSpotify = await this.spotifyApi.getArtist(artistaId);
     return converteSpotifyArtistasParaArtista(artistaSpotify);
   }
 
   async buscarMusicasArtista(artistaId: string): Promise<IMusica[]> {
-    const musicasArtista = (await this.spotifyApi.getArtistTopTracks(artistaId, 'BR')).tracks;
+    const musicasArtista = (
+      await this.spotifyApi.getArtistTopTracks(artistaId, 'BR')
+    ).tracks;
     return musicasArtista.map(converteSpotifyTrackParaMusica);
   }
 
