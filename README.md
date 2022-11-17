@@ -1,27 +1,17 @@
-# AngularSpotifyClone
+# Spotify Redesign com Angular
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.0.5.
+Este é o resultado de uma aula do YouTube, onde criamos juntos uma aplicação que consume a API do Spotify e exibe os dados usando um design próprio.
 
-## Development server
+Acesse aqui a playlist do YouTube [Spotify Playlist](https://www.youtube.com/playlist?list=PLMFE0Mu3BVy63bmSR92QbTR_rU576VOxg)
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Instalação
 
-## Code scaffolding
+No terminal execute `npm install` para instalar as dependências.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Executando
 
-## Build
+Execute `npm start` para rodar a aplicação e depois acesse `http://localhost:4200` no seu navegador.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Resultado final
 
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+![result](https://user-images.githubusercontent.com/44181261/202456259-53480729-b4e1-4e8e-9b55-5f3e69776701.png)
