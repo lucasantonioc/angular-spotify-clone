@@ -1,0 +1,45 @@
+@import 'variaveis.scss';
+@import 'table.scss';
+
+:host {
+  display: flex;
+  justify-content: space-between;
+
+  .lista {
+    padding: 0px 50px;
+    padding-bottom: 20px;
+    width: 100%;
+    max-height: 100vh;
+    overflow-y: scroll;
+
+    img {
+      width: 80px;
+      border-radius: 50%;
+      flex-grow: 0;
+    }
+
+    .table {
+      th, td {
+        padding-right: 10px;
+      }
+    }
+
+    .nome {
+      font-size: 1.2rem;
+    }
+  }
+
+  ::-webkit-scrollbar {
+    width: 7px;
+
+    &-thumb {
+      background-color: rgba($cor-secundaria, .2);
+      border-radius: 5px;
+    }
+
+    &-track {
+      background-color: transparent;
+    }
+  }
+
+}

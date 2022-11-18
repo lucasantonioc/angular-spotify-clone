@@ -1,0 +1,40 @@
+@import 'variaveis.scss';
+
+:host {
+  input {
+    width: 100%;
+    padding: 10px 5px;
+    outline: none;
+    background-color: $cor-fundo-card;
+    color: $cor-secundaria;
+    font-size: item;
+    font-weight: 500;
+    border: solid 1px;
+    border-color: $cor-fundo-card;
+
+    &:focus, &:active {
+      border-color: $cor-fundo-card-claro;
+    }
+  }
+
+  .sugestoes {
+    margin-top: 10px;
+    flex-wrap: wrap;
+
+    span {
+      color: $cor-branco-transparente;
+      margin-top: 10px;
+      margin-right: 5px;
+      padding: 5px 10px;
+      border: 1px solid $cor-fundo-card-claro;
+      font-size: .8rem;
+      border-radius: 15px;
+      cursor: pointer;
+
+      &:hover {
+        color: $cor-secundaria;
+        background-color: rgba($cor-primaria, .5);
+      }
+    }
+  }
+}

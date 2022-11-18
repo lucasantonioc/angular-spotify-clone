@@ -1,0 +1,25 @@
+<div class="lista mt-4">
+  <div class="titulo-bg mt-7">
+    {{ titulo }}
+  </div>
+
+  <div class="table mt-3">
+    <thead>
+      <tr>
+        <th class="w-5"></th>
+        <th class="w-35"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let artista of artistas"
+        (click)="irParaArtista(artista.id)"
+      >
+        <td class="foto">
+          <img src="{{ artista.imagemUrl }}" alt="">
+        </td>
+        <td class="nome"> {{ artista.nome }} </td>
+      </tr>
+    </tbody>
+  </div>
+
+</div>
